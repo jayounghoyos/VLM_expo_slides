@@ -45,7 +45,6 @@ const groups: { h: string; items: Ref[] }[] = [
       { t: 'SmolVLA', a: 'Shukor et al. 2025', id: 'arXiv:2506.01844' },
       { t: 'MuJoCo', a: 'Google DeepMind', id: 'github.com/google-deepmind/mujoco' },
       { t: 'MuJoCo Playground', a: 'Zakka et al. 2025', id: 'arXiv:2502.08844' },
-      { t: 'VLA talk (the base of this deck)', a: 'Youngermaster', id: 'github.com/Youngermaster/VLA-introduction-slides' },
     ],
   },
 ]
