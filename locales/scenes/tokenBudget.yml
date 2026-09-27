@@ -1,0 +1,28 @@
+es:
+  title: ¿Cuántos tokens *cuesta* una imagen?
+  sep: ' '
+  tokens: tokens por imagen
+  n0: ViT · parches de 16 px
+  n0_sub: (224 / 16)² = 196
+  n1: LLaVA-1.5 · parches de 14 px
+  n1_sub: (336 / 14)² = 576
+  n2: el doble de lado, 4× tokens
+  n2_sub: 'Qwen2-VL: el número sigue a cada imagen'
+  n3: pixel shuffle · 16× menos
+  n3_sub: 'SmolVLM: cada bloque de 4 × 4 se vuelve un token'
+  punch: SmolVLM-256M usa *menos de 1 GB* y le gana a Idefics-80B, *300× más grande.*
+  cite: 'ViT (arXiv:2010.11929) · LLaVA-1.5 (arXiv:2310.03744) · Qwen2-VL (arXiv:2409.12191) · SmolVLM (arXiv:2504.05299)'
+en:
+  title: How many tokens does an image *cost*?
+  sep: ','
+  tokens: tokens per image
+  n0: ViT · 16 px patches
+  n0_sub: (224 / 16)² = 196
+  n1: LLaVA-1.5 · 14 px patches
+  n1_sub: (336 / 14)² = 576
+  n2: twice the side, 4× the tokens
+  n2_sub: 'Qwen2-VL: the count follows each image'
+  n3: pixel shuffle · 16× fewer
+  n3_sub: 'SmolVLM: every 4 × 4 block becomes one token'
+  punch: SmolVLM-256M uses *under 1 GB* and beats Idefics-80B, *300× larger.*
+  cite: 'ViT (arXiv:2010.11929) · LLaVA-1.5 (arXiv:2310.03744) · Qwen2-VL (arXiv:2409.12191) · SmolVLM (arXiv:2504.05299)'

@@ -1,0 +1,22 @@
+es:
+  title: Una imagen vale *16 × 16 palabras*
+  px: 224 × 224 píxeles
+  count_sub: parches de 16 × 16 píxeles
+  count_math: (224 / 16)² = 14 × 14 = 196
+  row: 196 tokens en fila, como una frase
+  row_n: una sola secuencia
+  pos: posición
+  vec: cada token es un vector de 768 números
+  punch: El transformer ya no ve píxeles. Ve *una secuencia de tokens.*
+  cite: 'ViT, Dosovitskiy et al. 2020 (arXiv:2010.11929) · ViT-Base: D = 768'
+en:
+  title: An image is worth *16 × 16 words*
+  px: 224 × 224 pixels
+  count_sub: patches of 16 × 16 pixels
+  count_math: (224 / 16)² = 14 × 14 = 196
+  row: 196 tokens in a row, like a sentence
+  row_n: one single sequence
+  pos: position
+  vec: every token is a vector of 768 numbers
+  punch: The transformer no longer sees pixels. It sees *a sequence of tokens.*
+  cite: 'ViT, Dosovitskiy et al. 2020 (arXiv:2010.11929) · ViT-Base: D = 768'

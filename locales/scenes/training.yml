@@ -1,0 +1,32 @@
+es:
+  title: Se entrena en *dos etapas*
+  enc: Codificador de visión
+  prj: Proyector
+  llm: Modelo de lenguaje
+  frozen: congelado
+  trains: se entrena
+  s1: 1 · Alinear
+  cap1: '«dos tazas y una laptop»'
+  s1_data: pares imagen y texto · menos de 4 h
+  s2: 2 · Seguir instrucciones
+  you: tú
+  ex_q: ¿Qué hay para tomar café?
+  ex_a: Dos tazas llenas, junto a la laptop.
+  s2_data: instrucciones escritas por GPT-4 · menos de 10 h
+  cite: 'LLaVA, Liu et al. 2023 (arXiv:2304.08485) · CC3M filtrado a 595 K · LLaVA-Instruct-158K · 8 × A100'
+en:
+  title: Trained in *two stages*
+  enc: Vision encoder
+  prj: Projector
+  llm: Language model
+  frozen: frozen
+  trains: trains
+  s1: 1 · Align
+  cap1: '“two mugs and a laptop”'
+  s1_data: image and text pairs · under 4 h
+  s2: 2 · Follow instructions
+  you: you
+  ex_q: Is there anything for coffee?
+  ex_a: Two full mugs, next to the laptop.
+  s2_data: instructions written by GPT-4 · under 10 h
+  cite: 'LLaVA, Liu et al. 2023 (arXiv:2304.08485) · CC3M filtered to 595 K · LLaVA-Instruct-158K · 8 × A100'

@@ -1,0 +1,38 @@
+es:
+  title: Dónde se *equivoca*
+  s1: alucina
+  s2: no distingue
+  s3: no cuenta
+  you: tú
+  q1: ¿Hay un tenedor junto a la taza blanca?
+  a1: Sí, a la derecha de la taza.
+  v1: No hay ningún tenedor.
+  c1: Inventa lo que *suele* estar junto. Si hay tazas, "debe" haber cubiertos.
+  q2: ¿El asa de la taza blanca apunta a la izquierda o a la derecha?
+  a2: A la derecha.
+  v2: En B apunta a la izquierda.
+  c2: Para CLIP, A y B son *casi la misma foto.* El detalle se pierde antes de llegar al LLM.
+  q3: ¿Cuántas tazas hay?
+  a3: Hay cinco tazas.
+  v3: Son siete.
+  c3: En estas preguntas los humanos aciertan *≈ 96 %.* Casi todos los modelos, menos que al azar.
+  cite: 'Ejemplos ilustrativos · POPE, Li et al. 2023 (arXiv:2305.10355) · MMVP, Tong et al. 2024 (arXiv:2401.06209)'
+en:
+  title: Where it *goes wrong*
+  s1: hallucinates
+  s2: can't tell apart
+  s3: can't count
+  you: you
+  q1: Is there a fork next to the white mug?
+  a1: Yes, to the right of the mug.
+  v1: There is no fork at all.
+  c1: It invents what *usually* goes together. Mugs, so there "must" be cutlery.
+  q2: Does the white mug's handle point left or right?
+  a2: To the right.
+  v2: In B it points left.
+  c2: To CLIP, A and B are *almost the same photo.* The detail is lost before it reaches the LLM.
+  q3: How many mugs are there?
+  a3: There are five mugs.
+  v3: There are seven.
+  c3: On these questions humans get *≈ 96%* right. Almost every model scores below chance.
+  cite: 'Illustrative examples · POPE, Li et al. 2023 (arXiv:2305.10355) · MMVP, Tong et al. 2024 (arXiv:2401.06209)'

@@ -1,0 +1,47 @@
+{
+  "name": "vlm-introduction-slides",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Del Píxel a la Palabra: an animated introduction to Vision-Language Models",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=20.12.0"
+  },
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build --router-mode hash",
+    "build:es": "VITE_DECK_LOCALE=es slidev build --router-mode hash --out dist/es",
+    "build:en": "VITE_DECK_LOCALE=en slidev build --router-mode hash --out dist/en",
+    "export": "VITE_DECK_LOCALE=es slidev export --format pdf --with-clicks --output export/del-pixel-a-la-palabra.es.pdf",
+    "export:en": "VITE_DECK_LOCALE=en slidev export --format pdf --with-clicks --output export/from-pixels-to-words.en.pdf",
+    "check:content": "tsx scripts/check-content.ts",
+    "check:types": "node scripts/check-types.mjs",
+    "verify": "pnpm check:types && pnpm check:content",
+    "check:fit": "node scripts/check-fit.mjs"
+  },
+  "dependencies": {
+    "@slidev/cli": "^53.0.0",
+    "@slidev/client": "^53.0.0",
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/types": "^53.0.0",
+    "markdown-it": "^14.1.0",
+    "qrcode": "^1.5.4",
+    "vue": "^3.5.42",
+    "vue-i18n": "^11.1.0",
+    "yaml": "^2.9.0"
+  },
+  "devDependencies": {
+    "@fontsource-variable/geist-mono": "^5.3.0",
+    "@fontsource-variable/instrument-sans": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.2.0",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^26.4.1",
+    "@types/qrcode": "^1.5.5",
+    "playwright-chromium": "^1.56.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vite": "^8.2.2",
+    "vue-tsc": "^2.2.0"
+  }
+}

@@ -1,0 +1,13 @@
+demo:
+  title: 'Demo: MuJoCo'
+  lead: A VLM watching a physics simulation, and deciding what to do.
+  watch1: What the model sees in each frame
+  watch2: What it answers, and how long it takes
+  watch3: Where it gets it wrong
+  switch: over to MuJoCo
+  meta: Google DeepMind · Apache 2.0 · v3.14
+thanks:
+  questions: Questions?
+  qr: Slides and references
+refs:
+  title: References

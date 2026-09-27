@@ -1,0 +1,22 @@
+es:
+  title: 'CLIP: aprender a ver *leyendo*'
+  caps: un gato|una bici|montañas|dos tazas
+  pull: Los pares correctos se acercan.
+  push: Todos los demás se alejan.
+  pairs: pares imagen y texto, de internet
+  batch: 'lote: 32 768 pares a la vez'
+  new: una foto nueva
+  prompt: una foto de
+  punch: 'Ya no hacen falta etiquetas: 76,2 % en ImageNet *sin ver ninguna de sus 1,28 M etiquetas.*'
+  cite: 'CLIP, Radford et al. 2021 (arXiv:2103.00020) · zero-shot 76,2 %, igual al ResNet-50 supervisado'
+en:
+  title: 'CLIP: learning to see by *reading*'
+  caps: a cat|a bike|mountains|two mugs
+  pull: The right pairs are pulled together.
+  push: Everything else is pushed apart.
+  pairs: image and text pairs, from the internet
+  batch: 'batch: 32,768 pairs at a time'
+  new: a new photo
+  prompt: a photo of
+  punch: 'No labels needed: 76.2% on ImageNet *without seeing any of its 1.28 M labels.*'
+  cite: 'CLIP, Radford et al. 2021 (arXiv:2103.00020) · zero-shot 76.2%, matching the supervised ResNet-50'

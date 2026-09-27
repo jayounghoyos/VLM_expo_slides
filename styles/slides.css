@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Deck-level component styles: the small pieces used directly in slides.md.
+   Anything reused across slides earns a class here rather than an inline style.
+   ========================================================================== */
+
+/* --- The live demo hand-off ------------------------------------------------
+   The slide you leave the deck from and come back to. It has to read from the
+   back of the room in the two seconds before you Alt-Tab: one title, one line
+   of what to watch for, the command, and a cue that you are switching. */
+.demo__lead { font-size: var(--fs-lead); line-height: var(--lh-lead); color: var(--text-primary); max-width: 34ch; }
+.demo__watch { display: flex; flex-direction: column; gap: 8px; margin: var(--sp-5) 0 0; }
+.demo__item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  align-items: baseline;
+  gap: var(--sp-2);
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+}
+.demo__n { font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: var(--fs-caption); color: var(--accent-vis); }
+.demo__switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: var(--sp-5);
+  font-family: 'Geist Mono Variable', ui-monospace, monospace;
+  font-size: var(--fs-small);
+  color: var(--accent-gen);
+}
+.demo__switch kbd {
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-gen-tint);
+  color: var(--accent-gen);
+  font-size: var(--fs-caption);
+}
+.demo__stage {
+  position: relative;
+  height: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--sp-4);
+}
+.demo__brand {
+  font-family: 'Space Grotesk Variable', sans-serif;
+  font-variation-settings: 'wght' 700;
+  font-size: 76px;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+.demo__brand span { color: var(--accent-vis); }
+.demo__meta { font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: var(--fs-caption); color: var(--text-muted); }
+
+/* --- Closing: Gracias · Thank you, questions, one QR ------------------------ */
+.thanks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-8);
+  height: 100%;
+  padding: 0 88px 0 80px;
+}
+.thanks__words { display: flex; flex-direction: column; }
+.slidev-layout.slidev-layout .thanks__big {
+  display: flex;
+  flex-direction: column;
+  font-size: 84px;
+  line-height: 1;
+  white-space: nowrap;
+  max-width: none;
+  margin: 0 0 var(--sp-5);
+}
+.thanks__big span { display: block; animation: thanks-rise 900ms var(--e-out-expo) both; }
+.thanks__big span + span { animation-delay: 140ms; }
+.thanks__q { font-size: 30px; color: var(--text-secondary); margin: 0 0 var(--sp-5); animation: thanks-rise 900ms var(--e-out-expo) 320ms both; }
+.thanks__contact { font-size: var(--fs-body); color: var(--accent-vis); margin: 0; }
+.thanks .qr { animation: thanks-rise 900ms var(--e-out-expo) 420ms both; }
+@keyframes thanks-rise { from { opacity: 0; translate: 0 28px; filter: blur(10px); } to { opacity: 1; translate: 0 0; filter: blur(0); } }
+@media print { .thanks__big span, .thanks__q, .thanks .qr { animation: none; } }
+
+/* --- Compact-element line-height --------------------------------------------
+   `.slidev-layout` sets line-height 1.55, right for prose and far too loose
+   for dense labels. Reading measures keep 1.55; UI-scale text gets 1.3. */
+.slidev-layout.slidev-layout :is(
+  .t-mono, .t-caption, .t-micro,
+  [class*='__label'], [class*='__sub'], [class*='__meta'], [class*='__n'], [class*='__item']
+) {
+  line-height: 1.3;
+}

@@ -1,0 +1,30 @@
+es:
+  title: 'El puente: un *proyector*'
+  enc: Codificador de visión
+  enc_sub: ViT · CLIP
+  prj: proyector
+  llm: Modelo de lenguaje
+  llm_sub: Vicuna · Llama
+  map: vectores de imagen → vectores de palabra
+  q: ¿Cuántas|tazas|hay?
+  g_img: 576 tokens de imagen
+  g_q: tu pregunta
+  one_seq: una sola frase
+  a: Hay|dos|tazas
+  punch: Para el LLM, la imagen son *576 palabras de un idioma nuevo.*
+  cite: 'LLaVA, Liu et al. 2023 (arXiv:2304.08485) · LLaVA-1.5 (arXiv:2310.03744): 336 px, (336/14)² = 576 tokens'
+en:
+  title: 'The bridge: a *projector*'
+  enc: Vision encoder
+  enc_sub: ViT · CLIP
+  prj: projector
+  llm: Language model
+  llm_sub: Vicuna · Llama
+  map: image vectors → word vectors
+  q: How|many|mugs?
+  g_img: 576 image tokens
+  g_q: your question
+  one_seq: one single sentence
+  a: Two|mugs
+  punch: To the LLM, the image is *576 words in a new language.*
+  cite: 'LLaVA, Liu et al. 2023 (arXiv:2304.08485) · LLaVA-1.5 (arXiv:2310.03744): 336 px, (336/14)² = 576 tokens'

@@ -1,0 +1,26 @@
+es:
+  title: Tres formas de *conectar*
+  frozen: congelado
+  n1: Proyector
+  c1: Todos los tokens de imagen entran, tal cual.
+  w1: LLaVA · 2023
+  n2: Q-Former
+  c2: 32 consultas resumen la imagen antes de entrar.
+  w2: BLIP-2 · 2023 · 188 M
+  n3: Atención cruzada
+  c3: El LLM mira la imagen desde adentro, en cada capa.
+  w3: Flamingo · 2022 · 80 B
+  cite: 'LLaVA (arXiv:2304.08485) · BLIP-2 (arXiv:2301.12597) · Flamingo (arXiv:2204.14198)'
+en:
+  title: Three ways to *connect*
+  frozen: frozen
+  n1: Projector
+  c1: Every image token goes in, as it is.
+  w1: LLaVA · 2023
+  n2: Q-Former
+  c2: 32 queries summarise the image before it goes in.
+  w2: BLIP-2 · 2023 · 188 M
+  n3: Cross-attention
+  c3: The LLM looks at the image from inside, at every layer.
+  w3: Flamingo · 2022 · 80 B
+  cite: 'LLaVA (arXiv:2304.08485) · BLIP-2 (arXiv:2301.12597) · Flamingo (arXiv:2204.14198)'

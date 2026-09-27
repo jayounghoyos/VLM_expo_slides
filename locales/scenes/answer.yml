@@ -1,0 +1,34 @@
+es:
+  title: ¿Cómo *responde*?
+  cam: la foto, vista por el modelo
+  q: ¿Cuántas|tazas|hay?
+  qi: '1'
+  look: La palabra *tazas* mira toda la imagen, y pesa más donde están las tazas.
+  a: Hay|dos|tazas
+  gen: una palabra a la vez
+  gen_punch: Cada palabra nueva *vuelve a entrar* para elegir la siguiente.
+  m_img: imagen
+  m_q: pregunta
+  m_a: respuesta
+  m_rows: 'filas: quién mira · columnas: a quién'
+  m_prefix: imagen y pregunta se ven completas
+  m_causal: la respuesta solo mira hacia atrás
+  punch: Mismo transformer de siempre. Cambia *quién puede mirar a quién.*
+  cite: 'Máscara prefix-LM de PaliGemma, Beyer et al. 2024 (arXiv:2407.07726)'
+en:
+  title: How does it *answer*?
+  cam: the photo, as the model sees it
+  q: How|many|mugs?
+  qi: '2'
+  look: The word *mugs* looks at the whole image, and weighs most where the mugs are.
+  a: Two|mugs
+  gen: one word at a time
+  gen_punch: Every new word *goes back in* to choose the next one.
+  m_img: image
+  m_q: question
+  m_a: answer
+  m_rows: 'rows: who looks · columns: at whom'
+  m_prefix: image and question see each other fully
+  m_causal: the answer only looks back
+  punch: The same old transformer. What changes is *who may look at whom.*
+  cite: 'Prefix-LM mask from PaliGemma, Beyer et al. 2024 (arXiv:2407.07726)'

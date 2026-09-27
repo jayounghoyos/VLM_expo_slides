@@ -1,0 +1,34 @@
+es:
+  n: '01'
+  accent: vis
+  title: Capítulo
+  sub: ''
+  see_n: '01'
+  see_title: Cómo ve
+  see_sub: Una imagen se convierte en tokens, igual que una frase.
+  see_accent: vis
+  bridge_n: '02'
+  bridge_title: El puente
+  bridge_sub: Cómo esos tokens entran a un modelo de lenguaje que nunca vio una imagen.
+  bridge_accent: vis
+  next_n: '03'
+  next_title: Límites y lo que viene
+  next_sub: Dónde se equivoca, y cómo el mismo modelo termina moviendo un robot.
+  next_accent: gen
+en:
+  n: '01'
+  accent: vis
+  title: Chapter
+  sub: ''
+  see_n: '01'
+  see_title: How it sees
+  see_sub: An image becomes tokens, just like a sentence.
+  see_accent: vis
+  bridge_n: '02'
+  bridge_title: The bridge
+  bridge_sub: How those tokens get into a language model that has never seen an image.
+  bridge_accent: vis
+  next_n: '03'
+  next_title: Limits and what comes next
+  next_sub: Where it goes wrong, and how the same model ends up moving a robot.
+  next_accent: gen

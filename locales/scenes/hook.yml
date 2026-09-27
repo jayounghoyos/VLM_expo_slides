@@ -1,0 +1,14 @@
+es:
+  title: La misma pregunta, *dos veces*
+  you: tú
+  q: ¿Cuántas tazas hay en esta foto?
+  llm_a: Lo siento, no puedo ver imágenes.
+  vlm_a: Hay dos tazas, una blanca y una naranja.
+  punch: Un LLM leyó todo internet, pero nunca *vio* una taza.
+en:
+  title: The same question, *twice*
+  you: you
+  q: How many mugs are in this photo?
+  llm_a: Sorry, I can't see images.
+  vlm_a: There are two mugs, a white one and an orange one.
+  punch: An LLM has read the whole internet, but has never *seen* a mug.
