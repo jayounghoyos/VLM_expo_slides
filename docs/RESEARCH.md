@@ -70,14 +70,28 @@ printed in it.
     and even GPT-4V trails humans by more than 50 points.
 - The limits slide's answers are illustrative; the failure modes are the papers'.
 
-## From VLM to robot
+## From VLM to robot (chapter 04)
 
-- **RT-2** (arXiv:2307.15818): "Vision-Language-Action Models Transfer Web
-  Knowledge to Robotic Control". Actions written as text tokens.
-- **OpenVLA** (arXiv:2406.09246): **7B**, Prismatic-7B VLM (SigLIP + DINOv2
-  encoder, 2-layer MLP, Llama 2 7B), 970k robot demos.
-- **SmolVLA** (hf.co/blog/smolvla, arXiv:2506.01844): **450M**, SmolVLM2
-  backbone, runs on a consumer GPU or a MacBook.
+- **RT-2** (Brohan et al. 2023, arXiv:2307.15818): "Vision-Language-Action Models
+  Transfer Web Knowledge to Robotic Control".
+  - An action is a text string of **8** tokens: terminate, Δpos x/y/z, Δrot x/y/z, gripper.
+  - The continuous dimensions are cut into **256 uniform bins**. PaLI-X reuses
+    its integer tokens; PaLM-E **overwrites the 256 least-used tokens**.
+  - Emergent reasoning with chain of thought: "which object to pick up for use
+    as an improvised hammer (a rock)" (the `vla-loop` example).
+  - Speed: 55B at **1–3 Hz**, 5B around 5 Hz.
+- **OpenVLA** (Kim et al. 2024, arXiv:2406.09246): **7B**.
+  - Built on the Prismatic-7B VLM: SigLIP + DINOv2 encoder, 2-layer MLP, Llama 2 7B.
+  - Each action dimension goes into **256 bins** spanning the **1st to 99th
+    quantile** of the training actions.
+  - The bins "overwrite the 256 least used tokens in the Llama tokenizer's
+    vocabulary (which corresponds to the last 256 tokens)". [D] Llama's
+    vocabulary is 32,000, so the ids are **31744–31999**.
+  - About **6 Hz** on one RTX 4090.
+  - `vla-same` shows 7 dimensions (6 deltas + gripper). The values are illustrative.
+- **SmolVLA** (Shukor et al. 2025, arXiv:2506.01844): **450M**, SmolVLM2 backbone,
+  keeps the first 16 of 32 LLM layers ("half its layers"), plus a flow-matching
+  action expert (continuous, no bins). Runs on a consumer GPU or a laptop.
 
 ## Demo
 

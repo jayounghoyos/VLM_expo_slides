@@ -8,32 +8,15 @@
  *   3 say   the LLM answers in gold. For the LLM, the image was just words.
  */
 import { defineScene } from '../lib/scene/types'
-import { C, type Kit } from '../lib/scene/kit'
-import { alpha, clamp, hash, inOutCubic, lerp, outBack, outCubic, outExpo, seg } from '../lib/scene/math'
-import { photoAt } from '../lib/scene/photo'
+import { C } from '../lib/scene/kit'
+import { inOutCubic, lerp, outBack, outCubic, seg } from '../lib/scene/math'
+import { ENC, LLM, MID, PRJ, ROW, imageToken, pipeline, rowTextX } from '../lib/scene/pipeline'
 
-const IMG = { x: 110, y: 270, s: 240 }
-const ENC = { x: 440, y: 250, w: 330, h: 280 }
-const PRJ = { x: 870, y: 300, w: 200, h: 180 }
-const LLM = { x: 1170, y: 250, w: 670, h: 280 }
-const ROW_Y = 790
-const ROW_X = 110
-const NT = 20
-const TP = 38
-const TS = 32
-
-function block(K: Kit, b: { x: number; y: number; w: number; h: number }, k: number, fill: string, stroke?: string) {
-  if (k <= 0) return
-  const { ctx } = K
-  ctx.save()
-  ctx.globalAlpha *= clamp(k * 2)
-  const s = lerp(0.94, 1, outExpo(k))
-  ctx.translate(b.x + b.w / 2, b.y + b.h / 2)
-  ctx.scale(s, s)
-  K.fillRR(-b.w / 2, -b.h / 2, b.w, b.h, 14, fill)
-  if (stroke) K.strokeRR(-b.w / 2, -b.h / 2, b.w, b.h, 14, stroke, 3)
-  ctx.restore()
-}
+const ROW_Y = ROW.y
+const ROW_X = ROW.x
+const NT = ROW.n
+const TP = ROW.pitch
+const TS = ROW.tile
 
 export default defineScene({
   cues: [2.2, 5.6, 9.0, 12.4],
@@ -41,28 +24,9 @@ export default defineScene({
     K.title(L('title'), t, 0.1)
 
     // ── the pipeline ───────────────────────────────────────────────────
-    const pk = outExpo(seg(t, 0.3, 1.1))
-    K.fade(pk, () => {
-      photoAt(K, IMG.x, IMG.y + 20, IMG.s)
-      K.strokeRR(IMG.x, IMG.y + 20, IMG.s, IMG.s, 12, C.paper, 3)
-    })
-    const ek = seg(t, 0.55, 1.2)
-    block(K, ENC, ek, C.table)
-    K.text(L('enc'), ENC.x + ENC.w / 2, ENC.y + ENC.h / 2 - 6, { size: 34, weight: 600, fam: 'sans', align: 'center', alpha: ek })
-    K.text(L('enc_sub'), ENC.x + ENC.w / 2, ENC.y + ENC.h / 2 + 40, { size: 24, weight: 500, fam: 'mono', color: C.mute, align: 'center', alpha: ek })
-    const jk = seg(t, 0.8, 1.4)
-    block(K, PRJ, jk, C.vis)
-    K.text('MLP', PRJ.x + PRJ.w / 2, PRJ.y + PRJ.h / 2 + 2, { size: 44, weight: 700, fam: 'display', color: C.bg, align: 'center', base: 'middle', alpha: jk })
-    K.text(L('prj'), PRJ.x + PRJ.w / 2, PRJ.y - 22, { size: 26, weight: 600, fam: 'mono', color: C.vis, align: 'center', alpha: jk })
-    const lk = seg(t, 1.05, 1.7)
-    const lit = outCubic(seg(t, 7.6, 8.2))
-    block(K, LLM, lk, C.table, lit > 0 ? alpha(C.vis, lit) : undefined)
-    K.text(L('llm'), LLM.x + LLM.w / 2, LLM.y + LLM.h / 2 - 6, { size: 34, weight: 600, fam: 'sans', align: 'center', alpha: lk })
-    K.text(L('llm_sub'), LLM.x + LLM.w / 2, LLM.y + LLM.h / 2 + 40, { size: 24, weight: 500, fam: 'mono', color: C.mute, align: 'center', alpha: lk })
-    const mid = ENC.y + ENC.h / 2
-    K.arrow(IMG.x + IMG.s + 14, mid, ENC.x - 14, mid, { color: C.mute, k: outCubic(seg(t, 1.2, 1.6)) })
-    K.arrow(ENC.x + ENC.w + 14, mid, PRJ.x - 14, mid, { color: C.mute, k: outCubic(seg(t, 1.35, 1.75)) })
-    K.arrow(PRJ.x + PRJ.w + 14, mid, LLM.x - 14, mid, { color: C.mute, k: outCubic(seg(t, 1.5, 1.9)) })
+    const lab = { enc: L('enc'), encSub: L('enc_sub'), prj: L('prj'), llm: L('llm'), llmSub: L('llm_sub') }
+    pipeline(K, t, lab, { lit: outCubic(seg(t, 7.6, 8.2)) })
+    const mid = MID
 
     // ── 1. vectors through the projector, down into the row ─────────────
     for (let n = 0; n < 6; n++) {
@@ -84,14 +48,14 @@ export default defineScene({
       const dx = ROW_X + n * TP
       const x = lerp(sx, dx, k)
       const y = lerp(sy, ROW_Y - TS / 2, k) - Math.sin(k * Math.PI) * 40
-      K.fillRR(x, y, TS, TS, 6, alpha(C.vis, 0.55 + 0.45 * hash(n, 5)))
+      imageToken(K, n, x, y)
     }
     const mapLab = outCubic(seg(t, 3.6, 4.2))
     K.text(L('map'), PRJ.x + PRJ.w / 2, PRJ.y + PRJ.h + 76, { size: 26, weight: 500, fam: 'mono', color: C.vis, align: 'center', alpha: mapLab * (1 - outCubic(seg(t, 5.8, 6.1))) })
 
     // ── 2. the question joins; the row enters the LLM ──────────────────
     const q = L('q').split('|')
-    let qx = ROW_X + NT * TP + 18
+    let qx = rowTextX
     const qx0 = qx
     q.forEach((w, i) => {
       const k = seg(t, 5.8 + i * 0.1, 6.2 + i * 0.1)

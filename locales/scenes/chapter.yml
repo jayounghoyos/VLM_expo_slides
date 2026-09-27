@@ -12,9 +12,13 @@ es:
   bridge_sub: Cómo esos tokens entran a un modelo de lenguaje que nunca vio una imagen.
   bridge_accent: vis
   next_n: '03'
-  next_title: Límites y lo que viene
-  next_sub: Dónde se equivoca, y cómo el mismo modelo termina moviendo un robot.
-  next_accent: gen
+  next_title: Límites
+  next_sub: Dónde se equivoca un VLM, y por qué.
+  next_accent: vis
+  act_n: '04'
+  act_title: De ver a actuar
+  act_sub: El mismo modelo, pero la respuesta ya no son palabras. Son movimientos.
+  act_accent: gen
 en:
   n: '01'
   accent: vis
@@ -29,6 +33,10 @@ en:
   bridge_sub: How those tokens get into a language model that has never seen an image.
   bridge_accent: vis
   next_n: '03'
-  next_title: Limits and what comes next
-  next_sub: Where it goes wrong, and how the same model ends up moving a robot.
-  next_accent: gen
+  next_title: Limits
+  next_sub: Where a VLM goes wrong, and why.
+  next_accent: vis
+  act_n: '04'
+  act_title: From seeing to acting
+  act_sub: The same model, but the answer is no longer words. It is movement.
+  act_accent: gen

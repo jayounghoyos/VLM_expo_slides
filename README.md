@@ -57,9 +57,12 @@ The first time you run the screenshot scripts, Playwright may need its browser:
 
 Presenter mode with Spanish speaker notes per click: `http://localhost:3030/#/presenter`.
 
-**Timing.** About 11 min of slides plus about 2.5 min of demo. If you run long,
-cut `token-budget` first, then `bridges`. Never cut `patches`, `projector` or
-`answer`, because those three are the talk.
+**Timing.** About 13 to 14 min of slides plus about 2.5 min of demo, so plan to
+cut one or two slides for a 15-minute slot. Cut `token-budget` first, then
+`bridges`, then `clip`'s third click. Never cut `patches`, `projector`, `answer`
+or `vla-same`. The last one is the hinge between the two halves: it replays the
+projector slide in the same place, so the room sees that a VLA is the same
+machine with a different output.
 
 **The MuJoCo demo** (`demo-mujoco`) is a placeholder. Edit its text in
 `locales/{es,en}.yml` under `demo:` and the command in `slides.md`. On stage,
@@ -79,7 +82,8 @@ scenes/<name>.ts           defineScene({ cues, draw }): one canvas scene
 locales/scenes/<name>.yml  that scene's words, es and en side by side
 locales/{es,en}.yml        text of the HTML slides (demo, thanks, references)
 lib/scene/                 the engine: math (eases, springs), kit (text, chips,
-                           arrows, typing), photo (the running example), robot (arm)
+                           arrows, typing), photo (the running example), robot (arm),
+                           pipeline (the VLM diagram shared by projector and vla-same)
 components/                Scene · QrCard · References · T · VideoSlot
 layouts/                   scene · split · viz · claim
 pages/lab.vue              /#/lab: scrub any scene, jump between cues

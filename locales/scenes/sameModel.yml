@@ -1,0 +1,30 @@
+es:
+  title: Mismo modelo, *otra respuesta*
+  enc: Codificador de visión
+  enc_sub: ViT · SigLIP
+  prj: proyector
+  llm: Modelo de lenguaje
+  llm_sub: Llama 2 · 7 B
+  q: ¿Cuántas|tazas|hay?
+  a: Hay|dos|tazas
+  instr: toma|la|taza|naranja
+  in: una instrucción
+  toks: 7 tokens de acción
+  grip: pinza
+  punch: Para el modelo, una acción es *una frase más.*
+  cite: 'OpenVLA (arXiv:2406.09246): 7 dimensiones, 256 cajones, tokens 31744 a 31999 · valores ilustrativos'
+en:
+  title: Same model, *a different answer*
+  enc: Vision encoder
+  enc_sub: ViT · SigLIP
+  prj: projector
+  llm: Language model
+  llm_sub: Llama 2 · 7 B
+  q: How|many|mugs?
+  a: Two|mugs
+  instr: pick|up|the|orange|mug
+  in: an instruction
+  toks: 7 action tokens
+  grip: grip
+  punch: To the model, an action is *just another sentence.*
+  cite: 'OpenVLA (arXiv:2406.09246): 7 dimensions, 256 bins, tokens 31744 to 31999 · illustrative values'

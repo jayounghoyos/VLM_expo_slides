@@ -1,0 +1,38 @@
+es:
+  title: 'Un ciclo: ver, pensar, *actuar*'
+  cam: cámara
+  inside: un VLM por dentro
+  back: la cámara ve lo que hizo el brazo
+  hz: 'OpenVLA: unas 6 veces por segundo'
+  you: tú
+  q: ¿Qué objeto serviría como martillo improvisado?
+  a: La piedra.
+  know: Eso no está en ningún dato de robot. *Viene de la web,* a través del VLM.
+  m1: RT-2 · 55 B
+  d1: escribe las acciones como texto · 1 a 3 Hz
+  m2: OpenVLA · 7 B
+  d2: por dentro, un VLM (Llama 2 + DINOv2 + SigLIP)
+  m3: SmolVLA · 450 M
+  d3: SmolVLM2 con la mitad de sus capas, corre en una laptop
+  punch: Un VLA es un VLM que aprendió a *mover* en vez de *hablar.*
+  cite: 'RT-2 (arXiv:2307.15818): el martillo improvisado es la piedra · OpenVLA ≈ 6 Hz en una RTX 4090'
+  cite2: 'RT-2 (arXiv:2307.15818) · OpenVLA (arXiv:2406.09246) · SmolVLA (arXiv:2506.01844)'
+en:
+  title: 'A loop: see, think, *act*'
+  cam: camera
+  inside: a VLM inside
+  back: the camera sees what the arm did
+  hz: 'OpenVLA: about 6 times a second'
+  you: you
+  q: Which object could be an improvised hammer?
+  a: The rock.
+  know: That is in no robot data. *It comes from the web,* through the VLM.
+  m1: RT-2 · 55 B
+  d1: writes actions as text · 1 to 3 Hz
+  m2: OpenVLA · 7 B
+  d2: inside, a VLM (Llama 2 + DINOv2 + SigLIP)
+  m3: SmolVLA · 450 M
+  d3: SmolVLM2 with half its layers, runs on a laptop
+  punch: A VLA is a VLM that learned to *move* instead of *talk.*
+  cite: 'RT-2 (arXiv:2307.15818): the improvised hammer is the rock · OpenVLA ≈ 6 Hz on an RTX 4090'
+  cite2: 'RT-2 (arXiv:2307.15818) · OpenVLA (arXiv:2406.09246) · SmolVLA (arXiv:2506.01844)'

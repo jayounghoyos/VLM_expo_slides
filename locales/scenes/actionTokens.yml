@@ -1,0 +1,26 @@
+es:
+  title: Un movimiento, *en tokens*
+  axis_t: tiempo (1 s)
+  axis_a: ángulo
+  joint: una articulación
+  bins: 256 cajones (se ven 24)
+  p1: Un movimiento es una *señal continua.*
+  p2: Se muestrea, y cada valor cae en uno de *256 cajones.* Cada cajón es un token.
+  vocab: el vocabulario de Llama · 32 000 tokens
+  words: el|taza|ver|casa|robot|mesa|agua
+  least: las 256 palabras menos usadas → 256 cajones de acción
+  p3: El LLM ahora tiene *palabras para moverse.*
+  cite: 'RT-2 (arXiv:2307.15818) · OpenVLA (arXiv:2406.09246): cajones entre los percentiles 1 y 99 de los datos'
+en:
+  title: A movement, *as tokens*
+  axis_t: time (1 s)
+  axis_a: angle
+  joint: one joint
+  bins: 256 bins (24 shown)
+  p1: A movement is a *continuous signal.*
+  p2: It gets sampled, and each value lands in one of *256 bins.* Each bin is a token.
+  vocab: Llama's vocabulary · 32,000 tokens
+  words: the|mug|see|house|robot|table|water
+  least: the 256 least-used words → 256 action bins
+  p3: The LLM now has *words for moving.*
+  cite: 'RT-2 (arXiv:2307.15818) · OpenVLA (arXiv:2406.09246): bins between the 1st and 99th percentiles of the data'

@@ -207,7 +207,7 @@ transition: rise-up
 
 <Scene name="chapter" v="next" />
 
-<!-- TRANSICIÓN (10 s). "No todo es tan bonito." -->
+<!-- TRANSICIÓN (10 s). "Antes de seguir: no todo es tan bonito." -->
 
 ---
 layout: scene
@@ -229,20 +229,76 @@ Aclara: los ejemplos son ilustrativos; los fallos son los de los papers.
 
 ---
 layout: scene
-routeAlias: vlm-to-vla
+routeAlias: ch-act
+transition: rise-up
+---
+
+<Scene name="chapter" v="act" />
+
+<!--
+TRANSICIÓN (10 s). "Todo lo que vimos termina en palabras. ¿Y si la respuesta
+fuera un movimiento?"
+-->
+
+---
+layout: scene
+routeAlias: vla-same
+clicks: 3
+transition: arrive
+---
+
+<Scene name="sameModel" />
+
+<!--
+MISMO MODELO (1 min). La bisagra de la charla. Que reconozcan la máquina.
+
+Llegada: "¿Se acuerdan? Es exactamente el mismo diagrama de antes."
+Click 1: "Cambio una sola cosa a la entrada: en vez de una pregunta, una orden."
+Click 2: "Y a la salida... siguen siendo tokens. Pero ya no son palabras."
+Click 3: "Cada token es un número: cuánto moverse en x, y, z, cuánto girar, y
+la pinza. Para el modelo, una acción es una frase más."
+-->
+
+---
+layout: scene
+routeAlias: action-tokens
 clicks: 3
 ---
 
-<Scene name="vlmToVla" />
+<Scene name="actionTokens" />
 
 <!--
-DEL VLM AL ROBOT (1 min). Puente al demo.
+UN MOVIMIENTO EN TOKENS (1 min 15 s). El cómo, sin fórmulas.
 
-Click 1: "Mismo modelo. Le cambio la pregunta por una instrucción, y en vez
-de palabras le pido siete números."
-Click 2: "Esos números mueven un brazo."
+Click 1: "Una articulación moviéndose es una curva continua."
+Click 2: "La muestreamos y cada valor cae en uno de 256 cajones. Cada cajón,
+un token." (OpenVLA pone los cajones entre los percentiles 1 y 99 de los datos.)
+Click 3: "¿Y de dónde salen esos tokens? Se toman las 256 palabras que el LLM
+casi nunca usa y se les da un significado nuevo. El LLM ahora tiene palabras
+para moverse."
+Si preguntan: los modelos nuevos (π0, SmolVLA) no usan cajones, generan la
+trayectoria continua con un "experto de acción".
+-->
+
+---
+layout: scene
+routeAlias: vla-loop
+clicks: 3
+---
+
+<Scene name="vlaLoop" />
+
+<!--
+EL CICLO (1 min 15 s). Puente directo al demo.
+
+Llegada: "Esto no pasa una vez: la cámara ve, el modelo decide, el brazo se
+mueve, y la cámara ve el resultado."
+Click 1: deja correr el brazo. "OpenVLA hace esto unas seis veces por segundo."
+Click 2: "¿Y por qué partir de un VLM? Porque hereda lo que aprendió de la
+web. En RT-2 le preguntan qué sirve de martillo improvisado, y elige la
+piedra. Nadie le enseñó eso con datos de robot."
 Click 3: "RT-2, OpenVLA, SmolVLA: todos son un VLM por dentro. Un VLA es un
-VLM que aprendió a mover en vez de hablar. Vamos a verlo."
+VLM que aprendió a mover en vez de hablar." Y pasas al demo.
 -->
 
 ---
