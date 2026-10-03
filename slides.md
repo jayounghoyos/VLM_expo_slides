@@ -359,12 +359,12 @@ routeAlias: thanks
     <p class="thanks__q">{{ $t('thanks.questions') }}</p>
     <p class="thanks__contact t-mono">github.com/jayounghoyos</p>
   </div>
-  <QrCard url="https://github.com/jayounghoyos/VLM_expo_slides" :label="$t('thanks.qr')" sub="github.com/jayounghoyos/VLM_expo_slides" :size="230" />
+  <QrCard url="https://jayounghoyos.github.io/VLM_expo_slides/" :label="$t('thanks.qr')" sub="jayounghoyos.github.io/VLM_expo_slides" :size="230" />
 </div>
 
 <!--
 CIERRE. "Gracias." Y punto. Deja esta diapositiva durante las preguntas.
-El QR lleva al repo: github.com/jayounghoyos/VLM_expo_slides.
+El QR lleva a las diapositivas publicadas: jayounghoyos.github.io/VLM_expo_slides.
 -->
 
 ---
