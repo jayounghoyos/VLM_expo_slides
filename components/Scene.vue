@@ -153,9 +153,15 @@ onSlideLeave(() => {
 })
 
 let onResize: (() => void) | undefined
+/** The live slide's entrance should play from the start (fresh load, or a reload on this slide). */
+const shouldPlayEntrance = () => isActive() && stage.value === 0 && !isStatic()
+
 onMounted(async () => {
   size()
-  t = cue(stage.value)
+  // onSlideEnter has already fired for the slide that is live on page load and
+  // started its entrance from t = 0. Only slides that are NOT live jump straight
+  // to their finished frame, otherwise this would skip the opening animation.
+  if (!shouldPlayEntrance()) t = cue(stage.value)
   draw()
   // Canvas text needs the webfonts actually loaded, not just declared.
   try {
@@ -167,7 +173,14 @@ onMounted(async () => {
     ])
   }
   catch {}
-  draw()
+  // On a cold load the fonts can take longer than the entrance itself, so the
+  // room would see it half-played in a fallback face. Replay it from the top
+  // now that the real fonts are in.
+  if (shouldPlayEntrance()) {
+    t = 0
+    go()
+  }
+  else draw()
   onResize = () => {
     size()
     draw()
