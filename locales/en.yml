@@ -1,11 +1,12 @@
 demo:
-  title: 'Demo: MuJoCo'
-  lead: A VLM watching a physics simulation, and deciding what to do.
-  watch1: What the model sees in each frame
-  watch2: What it answers, and how long it takes
-  watch3: Where it gets it wrong
-  switch: over to MuJoCo
-  meta: Google DeepMind · Apache 2.0 · v3.14
+  title: 'Demo: a VLM that looks and decides'
+  lead: 'A simulated robot arm: the VLM answers, finds the objects and decides what to do.'
+  watch1: What the model sees, what it answers, and how fast
+  watch2: 'How confident each decision is: touch, pick or answer'
+  watch3: 'The VLM picks what and where; a classical controller moves the arm'
+  switch: over to the demo
+  meta: MuJoCo 3.8 · Qwen3-VL-4B · SO-101 · RGB-D camera
+  offline: local GPU · fully offline
 thanks:
   questions: Questions?
   qr: Slides and references

@@ -325,27 +325,60 @@ clicks: 1
 ::right::
 
 <div class="demo__stage">
-  <div class="demo__brand">Mu<span>JoCo</span></div>
+  <div class="demo__brand">VLM <span>+</span> robot</div>
   <div class="demo__meta">{{ $t('demo.meta') }}</div>
 
 ```bash
-# TODO: el comando real del demo
-python demo.py \
-  --model HuggingFaceTB/SmolVLM2-2.2B-Instruct \
-  --scene scenes/mesa.xml
+cd ~/personalProjects/vlm-arm-demo
+./run_demo.sh
 ```
 
+  <div class="demo__meta">{{ $t('demo.offline') }}</div>
 </div>
 
 <!--
-DEMO EN MUJOCO (2 min 30 s). Placeholder: edita el texto en locales/*.yml y el
-comando aquí arriba.
+DEMO EN VIVO (2 min 30 s). Una sola app en el navegador, sin internet, en la
+GPU local. Tenla abierta antes de empezar, con la cámara del robot visible.
 
-1. Click: muestra qué mirar.
-2. Alt+Tab a la app de MuJoCo. Deja que el demo hable; narra poco.
-3. Vuelve con Alt+Tab y avanza.
+0:00 Click: muestra qué mirar. "Un VLM que mira por la cámara de un robot,
+responde y decide qué hacer." Alt+Tab al navegador.
 
-Si falla: una vez más, y si no, sigue. "Por esto existe la diapositiva de límites."
+0:05 "Esto es lo que ve la cámara del robot: un SO-101, el mismo brazo
+     amarillo que tengo en casa, en un estudio simulado en MuJoCo."
+     Usa los botones de frases rápidas: no hay que escribir.
+0:15 ¿Qué ves sobre la mesa?
+     Mientras sale: "Responde token por token, como en la diapositiva de la
+     respuesta. Corre aquí, en este computador." Señala la franja: "leyó 432
+     tokens de imagen en 0,2 segundos y genera unos 30 tokens por segundo."
+     Pasa el mouse por «tazas» o «plato» en "dónde miró": "Esto es la atención:
+     al escribir esa palabra, el modelo miraba aquí. Son los mismos parches de
+     la diapositiva del proyector."
+0:30 ¿Cuántas tazas hay en la mesa?  -> "Dos tazas, en menos de un segundo."
+0:40 ¿Hay alguna manzana?  -> "No hay ninguna, y lo dice."
+     Señala las probabilidades: "Pasen el mouse por un token: casi dice
+     'ninguna' desde el principio."
+0:55 toca la taza roja
+     Señala la franja de arriba: "Ver, decidir, encontrar, medir, planear,
+     mover. Primero el VLM decide qué hacer: estas barras son la probabilidad
+     de cada acción, salen de los logits del modelo. Luego dibuja una caja
+     alrededor de la taza, y con la profundidad de esos píxeles la mido:
+     'lo que midió'. El robot no lee del simulador dónde están las cosas: lo
+     descubre mirando, como con una cámara RGB-D real."
+1:20 agarra la caja de chocolate y ponla en el plato
+     "Encuentra la caja y el plato, mide que la caja cabe en la pinza y prueba
+     rutas: las rojas chocan, la dorada es la elegida." Señala la telemetría:
+     "Esta línea roja es la carga de la pinza: cuando se dispara y la pinza
+     se detiene, sabe que lo agarró. El VLM decide qué y dónde; el agarre y
+     la trayectoria son programados."
+     (Si preguntan: en simulación el agarre tiene asistencia física; que lo
+     agarró lo decide el sensor de la pinza, como en un robot real.)
+2:00 agarra la taza blanca -> "no cabe en mi pinza": también sabe decir que no.
+     Si sobra tiempo: pon la cajita azul en el tazón.
+2:20 Alt+Tab de vuelta y avanza.
+
+Si falla: video de respaldo en media/act1_vlm.mp4 del proyecto del demo.
+Si el brazo falla un agarre, dilo sin drama: "La pinza le avisó que no lo
+tiene: por esto existe la diapositiva de límites." Y sigue.
 -->
 
 ---

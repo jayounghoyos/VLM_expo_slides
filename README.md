@@ -64,9 +64,15 @@ or `vla-same`. The last one is the hinge between the two halves: it replays the
 projector slide in the same place, so the room sees that a VLA is the same
 machine with a different output.
 
-**The MuJoCo demo** (`demo-mujoco`) is a placeholder. Edit its text in
-`locales/{es,en}.yml` under `demo:` and the command in `slides.md`. On stage,
-click once to show what to watch for, `Alt+Tab` to MuJoCo, then come back and
+**The live demo** (`demo-mujoco`) is a local Gradio app from
+`~/personalProjects/vlm-arm-demo`, launched with `./run_demo.sh`
+and run offline on the GPU (about 2.5 min). Qwen3-VL-4B answers questions about
+an SO-101 arm's camera view in MuJoCo, then decides what to do (action
+probabilities shown), boxes and measures objects with depth, and a classical
+controller touches or picks and places them (a VLM plus a controller, not a VLA).
+The timed script with the exact
+prompts is in the slide's speaker notes; backup videos live in the demo's
+`media/`. On stage, click once, `Alt+Tab` to the browser, then come back and
 press →.
 
 **Before the class:** run `pnpm export` and keep the PDF on a USB stick. Then

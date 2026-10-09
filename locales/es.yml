@@ -1,11 +1,12 @@
 demo:
-  title: 'Demo: MuJoCo'
-  lead: Un VLM mirando una simulación física, y decidiendo qué hacer.
-  watch1: Qué ve el modelo en cada cuadro
-  watch2: Qué responde, y cuánto se demora
-  watch3: Dónde se equivoca
-  switch: vamos a MuJoCo
-  meta: Google DeepMind · Apache 2.0 · v3.14
+  title: 'Demo: un VLM que mira y decide'
+  lead: 'Un brazo robótico simulado: el VLM responde, encuentra los objetos y decide qué hacer.'
+  watch1: Qué ve el modelo, qué responde y en cuánto tiempo
+  watch2: 'Con qué probabilidad decide: tocar, agarrar o responder'
+  watch3: 'El VLM elige qué y dónde; un controlador clásico mueve el brazo'
+  switch: vamos al demo
+  meta: MuJoCo 3.8 · Qwen3-VL-4B · SO-101 · cámara RGB-D
+  offline: GPU local · sin internet
 thanks:
   questions: ¿Preguntas?
   qr: Diapositivas y referencias
